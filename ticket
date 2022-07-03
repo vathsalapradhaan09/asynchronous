@@ -1,0 +1,53 @@
+console.log('person1: shows ticket');
+console.log('person2:shows tickket');
+const promiseWifeBringingTicks=new Promise((resolve,reject)=>{
+setTimeout(()=>{
+resolve('ticket');
+}.3000)
+});
+const getPopcorn=promiseWifeBringingTicks.then((t)=>{
+console.log('Wife:i havethe tics');
+console.log('husband:we should go in');
+console.log('wife:no i amhungry');
+return new Promise((resolve,reject)=>resolve('${t}popcorn'));
+});
+const getButter=getPopcorn.then((t)=>{
+console.log('husband:i got somepopcorn');
+console.log('husband:we should go in');
+console.log('wife:I need butter on my popcorn');
+return new Promise((resolve,reject)=>resolve('${t} butter'));
+});
+//Now create a new promise called getColdDrinks which come after husband gets butter. Integrate the code in both async and await and also promises' code
+console.log('person1: shows ticket');
+console.log('person2:shows tickket');
+const promiseWifeBringingTicks=new Promise((resolve,reject)=>{
+setTimeout(()=>{
+resolve('ticket');
+}.3000)
+});
+const getButter=promisehusbandBringingbutter.then((t)=>{
+console.log('Wife:i havethe tics');
+console.log('husband:we should go in');
+console.log('wife:no i amhungry');
+return new Promise((resolve,reject)=>resolve('${t}popcorn'));
+});
+const getColdDrinks=getButter.then((t)=>{
+console.log('husband:i got somepopcorn');
+console.log('husband:we should go in');
+console.log('wife:I need butter on my popcorn');
+return new Promise((resolve,reject)=>resolve('${t} butter'));
+});
+// you dont want towait until its done .asynchronous.
+you have to distrub other functions inorder to do call backs.so these solved by promise
+await is used to wait for promises
+blocking the main thread so cant write await outside excited in call back queue.
+async function printPosts(){
+await createPost({title:'post three',body:'this is post three'})
+await getPosts();
+await createPost({title:'post 4',body:'this is post4'})
+await getPosts();
+await createPosts({title:post 5',body:'this ispost 5'})
+await getPosts();
+}
+await function can only excuted on the promises only not on call back .
+await cant be excuted outside funvtion bescause its block the main thread.
